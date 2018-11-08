@@ -14,7 +14,9 @@
                         </div>
                     @endif
 
-                    <div class="progress">
+                    <order-progress status="{{ $order->status->name }}" initial="{{ $order->status->percent }}" order_id="{{ $order->id }}"></order-progress>
+
+                    {{--<div class="progress">
                         <progressbar :now="progress" type="success" striped animated></progressbar>
                     </div>
 
@@ -22,11 +24,9 @@
                         <span class="icon-ok-circled alert-icon-float-left"></span>
                         <strong>Well Done!</strong>
                         <p>You successfully read this important alert message.</p>
-                    </alert>
+                    </alert>--}}
 
-                    <div class="order-status">
-                        <strong>Order Status:</strong> {{ $order->status->name }}
-                    </div>
+
 
                     <hr>
 

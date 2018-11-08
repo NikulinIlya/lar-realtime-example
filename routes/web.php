@@ -9,8 +9,15 @@
 // Route::patch('/podcasts/{id}',             'PodcastsController@update');
 // Route::delete('/podcasts/{id}',            'PodcastsController@destroy');
 
+use App\Events\OrderStatusChanged;
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/fire', function () {
+    event(new OrderStatusChanged);
+    return 'Fired';
 });
 
 Auth::routes();

@@ -15,7 +15,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import { alert, progressbar } from 'vue-strap'
+/*import { alert, progressbar } from 'vue-strap'
 
 Vue.component('example', require('./components/Example.vue'));
 
@@ -27,5 +27,17 @@ const app = new Vue({
     data: {
       showAlert: false,
       progress: 10,
+    }
+});*/
+
+Vue.component('order-progress', require('./components/OrderProgress.vue'));
+
+const app = new Vue({
+    el: '#app',
+    mounted() {
+        Echo.channel('pizza-tracker')
+            .listen('OrderStatusChanged', (e) => {
+                console.log('realtime');
+            });
     }
 });
