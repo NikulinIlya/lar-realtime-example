@@ -7,6 +7,8 @@
         <div class="order-status">
             <strong>Order Status:</strong> {{ statusNew }}
         </div>
+
+        <img src="/img/delivery.gif" alt="delivery" v-if="progress >= 100">
     </div>
 </template>
 
@@ -28,7 +30,8 @@
         mounted() {
             Echo.channel('pizza-tracker.' + this.order_id)
                 .listen('OrderStatusChanged', (order) => {
-                    console.log(order);
+                    this.statusNew = order.status_name;
+                    this.progress = order.status_percent;
                 });
         }
     }

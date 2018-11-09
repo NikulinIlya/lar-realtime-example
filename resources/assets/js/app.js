@@ -31,6 +31,7 @@ const app = new Vue({
 });*/
 
 Vue.component('order-progress', require('./components/OrderProgress.vue'));
+Vue.component('order-alert', require('./components/OrderAlert.vue'));
 
 const app = new Vue({
     el: '#app',
