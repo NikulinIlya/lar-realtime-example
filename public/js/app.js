@@ -63346,7 +63346,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var _this = this;
 
-        Echo.channel('pizza-tracker.' + this.order_id).listen('OrderStatusChanged', function (order) {
+        Echo.private('pizza-tracker.' + this.order_id).listen('OrderStatusChanged', function (order) {
             _this.statusNew = order.status_name;
             _this.progress = order.status_percent;
         });

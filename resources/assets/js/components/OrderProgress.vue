@@ -28,7 +28,7 @@
             }
         },
         mounted() {
-            Echo.channel('pizza-tracker.' + this.order_id)
+            Echo.private('pizza-tracker.' + this.order_id)
                 .listen('OrderStatusChanged', (order) => {
                     this.statusNew = order.status_name;
                     this.progress = order.status_percent;
