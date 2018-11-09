@@ -16,7 +16,7 @@
 
                     <order-progress status="{{ $order->status->name }}" initial="{{ $order->status->percent }}" order_id="{{ $order->id }}"></order-progress>
 
-                    <order-alert {{ auth()->user()->id }}></order-alert>
+                    <order-alert user_id="{{ auth()->user()->id }}"></order-alert>
 
 
 
