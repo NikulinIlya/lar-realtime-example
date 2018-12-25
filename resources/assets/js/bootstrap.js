@@ -51,5 +51,8 @@ window.Echo = new Echo({
     broadcaster: 'pusher',
     key: '021bfb007af08fe7caee',
     cluster: 'eu',
-    encrypted: true
+    encrypted: false,
+    wsHost: window.location.hostname,
+    wsPort: 6001,
+    disableStats: true,
 });
